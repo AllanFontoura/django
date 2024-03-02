@@ -17,10 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from cliente import views
+from cliente import views as cliente_views
+from estoque import views as estoque_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('cadastro', views.cadastro, name='cadastro'),
+    path('', cliente_views.index, name='index'),
+    path('cadastro/', cliente_views.cadastro, name='cadastro'),
+    path('listar/', cliente_views.listar, name='listar'),
+    path('estoquar/', estoque_views.estoque, name='estoquar'),
 ]
+    
+

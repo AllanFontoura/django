@@ -1,0 +1,41 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <h4>Lista de Estoque</h4>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>SKU</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Max Estoque</th>
+                <th>Min Estoque</th>
+                <th>Data de Criação</th>
+                <th>Data de Atualização</th>
+                <th>Gerenciar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if lista %}
+                {% for cliente in lista %}
+                    <tr>
+                        <td>{{ estoque.sku}}</td>
+                        <td>{{ estoque.descricao }}</td>
+                        <td>{{ estoque.preco }}</td>
+                        <td>{{ estoque.max_estoque }}</td>
+                        <td>{{ estoque.min_estoque }}</td>
+                        <td>{{ cliente.created_at }}</td>
+                        <td>{{ cliente.update_at }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td class="text-center" colspan="8">
+                        Nenhum produto cadastrado
+                    </td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}
