@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cliente',
     'bootstrap5',
-    'estoque'
+    'estoque',
+    'usuario'
     
 ]
 
