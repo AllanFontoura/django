@@ -1,4 +1,4 @@
-{% extends 'master.html' %}
+{% extends 'master_estoque.html' %}
 
 {% block content %}
     <h4>Lista de Estoque</h4>
@@ -17,16 +17,16 @@
             </tr>
         </thead>
         <tbody>
-            {% if lista %}
-                {% for cliente in lista %}
+            {% if lista_est %}
+                {% for estoque in lista_est %}
                     <tr>
                         <td>{{ estoque.sku}}</td>
                         <td>{{ estoque.descricao }}</td>
                         <td>{{ estoque.preco }}</td>
                         <td>{{ estoque.max_estoque }}</td>
                         <td>{{ estoque.min_estoque }}</td>
-                        <td>{{ cliente.created_at }}</td>
-                        <td>{{ cliente.update_at }}</td>
+                        <td>{{ estoque.created_at }}</td>
+                        <td>{{ estoque.update_at }}</td>
                     </tr>
                 {% endfor %}
             {% else %}

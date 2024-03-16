@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 class Estoque(models.Model):
@@ -7,6 +8,6 @@ class Estoque(models.Model):
     preco = models.FloatField()
     max_estoque = models.IntegerField()
     min_estoque = models.IntegerField()
-    created_at = models.DateTimeField()
-    update_at = models.DateTimeField()
+    created_at = models.DateTimeField(default=datetime.now)
+    update_at = models.DateTimeField(default=datetime.now, blank=True)
 

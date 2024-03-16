@@ -23,6 +23,12 @@
                         <td>{{ cliente.status }}</td>
                         <td>{{ cliente.created_at }}</td>
                         <td>{{ cliente.update_at }}</td>
+                        <td>
+                         <a href="{% url 'deletar_cliente' cliente.id %}">
+                            Excluir</a>
+                            <a href="{% url 'editar_cliente' cliente.id %}">
+                            Editar</a>
+                        </td>
                     </tr>
                 {% endfor %}
             {% else %}
